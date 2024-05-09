@@ -1,0 +1,123 @@
+source ~/.vim/common_options
+source ~/.vim/common_keymap
+
+" =================================
+" == IdeaVim only configurations ==
+" =================================
+
+set notimeout
+
+" =============
+" == Plugins ==
+" =============
+
+set ideastatusicon=gray
+set which-key
+let g:WhichKey_DefaultDelay='1000'
+set NERDTree
+set surround
+set commentary
+set highlightedyank
+let g:highlightedyank_highlight_duration='100'
+let g:highlightedyank_highlight_color='rgba(255, 255, 255, 50)'
+
+" =========================
+" == IdeaVim only Keymap ==
+" =========================
+
+" [Explorer]
+noremap <leader>e :NERDTreeFind<CR>
+
+" [Closing is too hard]
+map <leader>qq <Action>(CloseContent)
+map <leader>qa <Action>(CloseAllEditors)
+nmap <leader>qw <Action>(HideAllWindows)
+
+" [Find / Replace text] using IntelliJ actions
+map n <Action>(FindNext)
+map N <Action>(FindPrevious)
+map / <Action>(Find)
+map % <Action>(Replace)
+
+" [Find]
+nmap <leader><leader> <Action>(Switcher)
+nmap <leader>fs <Action>(FindInPath)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fb <Action>(GotoAction)
+nmap <leader>fu <Action>(ShowUsages)
+nmap <leader>fU <Action>(FindUsages)
+
+" [Menu]
+nmap <leader>mm <Action>(MainMenu)
+nmap <leader>mb <Action>(BuildMenu)
+nmap <leader>mc <Action>(CodeMenu)
+nmap <leader>mt <Action>(ToolWindowsGroup)
+
+" [Collapse / Expand]
+nmap <leader>, <Action>(CollapseRegion)
+nmap <leader>. <Action>(ExpandRegion)
+nmap <leader>< <Action>(CollapseAllRegions)
+nmap <leader>> <Action>(ExpandAllRegions)
+
+" [Terminal]
+nmap <leader>` <Action>(ActivateTerminalToolWindow)
+
+" [Mark]
+nnoremap <silent> m0 :delmarks 0-9a-zA-Z<CR>
+nnoremap <silent> <leader>0 :marks 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<CR>
+nmap m1 <Action>(ToggleBookmark1)
+nmap m2 <Action>(ToggleBookmark2)
+nmap m3 <Action>(ToggleBookmark3)
+nmap m4 <Action>(ToggleBookmark4)
+nmap m5 <Action>(ToggleBookmark5)
+nmap m6 <Action>(ToggleBookmark6)
+nmap m7 <Action>(ToggleBookmark7)
+nmap m8 <Action>(ToggleBookmark8)
+nmap m9 <Action>(ToggleBookmark9)
+nmap <leader>1 <Action>(GotoBookmark1)
+nmap <leader>2 <Action>(GotoBookmark2)
+nmap <leader>3 <Action>(GotoBookmark3)
+nmap <leader>4 <Action>(GotoBookmark4)
+nmap <leader>5 <Action>(GotoBookmark5)
+nmap <leader>6 <Action>(GotoBookmark6)
+nmap <leader>7 <Action>(GotoBookmark7)
+nmap <leader>8 <Action>(GotoBookmark8)
+nmap <leader>9 <Action>(GotoBookmark9)
+
+" [Code]
+nmap <leader>ca <Action>(ShowIntentionActions)
+nmap <leader>cg <Action>(Generate)
+nmap <leader>ct <Action>(GoToTest)
+
+" [Problems / Quickfix]
+nmap <leader>xd <Action>(ShowErrorDescription)
+nmap <leader>xn <Action>(GotoNextError)
+nmap <leader>xp <Action>(GotoPreviousError)
+nmap <leader>xx <Action>(ActivateProblemsViewToolWindow)
+
+" [process] - build/debug/run/test
+nmap <leader>pr <Action>(ChooseRunConfiguration)
+nmap <leader>pd <Action>(ChooseDebugConfiguration)
+nmap <leader>pp <Action>(RunnerActions)
+nmap <leader>ps <Action>(Stop)
+
+" [refactor]
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <leader>rn <Action>(RenameElement)
+map <leader>rf <Action>(ReformatCode)
+map <leader>ro <Action>(OptimizeImports)
+map <leader>rs <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
+map <leader>rN <Action>(RenameFile)
+
+" [Git]
+" Enable 'Staging Area'
+map <leader>gg <Action>(Vcs.QuickListPopupAction)
+map <leader>gd <Action>(Compare.SameVersion)
+map <leader>gr <Action>(Vcs.RollbackChangedLines)
+map <leader>gc <Action>(Git.Commit.Stage)
+map <leader>gps <Action>(Vcs.Push)
+map <leader>gpl <Action>(Git.Pull)
+map <leader>gf <Action>(Git.Fetch)
+map <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>gH <Action>(Vcs.Show.Log)
+map <leader>ga <Action>(Git.Add)
