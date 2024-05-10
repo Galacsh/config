@@ -8,7 +8,6 @@ filetype on
 " General Settings
 set autoread
 set encoding=utf-8
-set fileencoding=utf-8
 set conceallevel=2
 set timeout timeoutlen=300
 set ttimeoutlen=0
@@ -61,3 +60,4 @@ set laststatus=3
 set termguicolors
 set whichwrap+=<,>,[,]
 set formatoptions-=cro
+
