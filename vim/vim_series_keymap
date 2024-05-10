@@ -22,7 +22,7 @@ function! GetVisualSelection()
 endfunction
 
 vnoremap / :<C-u>call GetVisualSelection()<Bar>:set hlsearch<CR>
-vnoremap % :<C-u>call GetVisualSelection()<Bar>:set hlsearch<CR>:%s//
+vnoremap g/ :<C-u>call GetVisualSelection()<Bar>:set hlsearch<CR>:%s//
 nnoremap <silent> <Esc> :<C-u>nohlsearch<CR>
 
 " [Terminal]
