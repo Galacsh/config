@@ -1,0 +1,7 @@
+" ======================== "
+" == Vim series Options == "
+" ======================== "
+
+" Turn on sign column
+set signcolumn=yes
+
