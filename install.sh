@@ -13,13 +13,17 @@ fi
 # 2. Change directory to `.config`.
 cd "${config_dir}"
 
-# 3. Load files with git.
+# 3. Clean up
+rm -rf .git .gitignore README.md alacritty ideavim install.sh nvim vim
+
+# 4. Load files with git.
 git init
 git remote add origin "${repository}"
 git fetch
-git reset --mixed "origin/${branch}"
+git reset "origin/${branch}"
+git restore .
 
-# 4. Link(symbolic) `vim` directory to `${HOME}/.vim`.
+# 5. Link(symbolic) `vim` directory to `${HOME}/.vim`.
 rm -rf "${vim_dir}"
 ln -s "${config_dir}/vim" "${vim_dir}"
 
