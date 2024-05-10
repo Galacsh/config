@@ -26,6 +26,23 @@ vnoremap g/ :<C-u>call GetVisualSelection()<Bar>:set hlsearch<CR>:%s//
 nnoremap <silent> <Esc> :<C-u>nohlsearch<CR>
 
 " [Terminal]
-noremap <silent> <leader>` :terminal<CR>
+let s:term_buf_nr = -1
+function! s:ToggleTerminal() abort
+    if s:term_buf_nr == -1 || !bufexists(s:term_buf_nr)
+        execute "botright terminal"
+        setlocal nobuflisted
+        let s:term_buf_nr = bufnr("%")
+    else
+        if bufwinnr(s:term_buf_nr) == -1
+            execute "botright sbuffer " . s:term_buf_nr
+        else
+            hide
+        endif
+    endif
+endfunction
+
+nnoremap <silent> <Leader>` :call <SID>ToggleTerminal()<CR>
+tnoremap <silent> <Leader>` <C-w>N:call <SID>ToggleTerminal()<CR>
 tnoremap <silent> <Esc><Esc> <C-\><C-n>
+tnoremap <silent> jk <C-\><C-n>
 
