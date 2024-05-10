@@ -6,7 +6,7 @@ branch="main"
 vim_dir=${HOME}/.vim
 
 # 1. Create "$HOME/.config" if doesn't exist:
-if [[ ! -d "${config_dir}" ]]
+if [[ ! -d "${config_dir}" ]]; then
   mkdir "${config_dir}"
 fi
 
