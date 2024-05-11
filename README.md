@@ -24,7 +24,13 @@ fi
 cd "${HOME}/.config"
 ```
 
-3. Load files with git.
+3. Clean up
+
+```shell
+rm -rf .git .gitignore README.md alacritty ideavim install.sh nvim vim
+```
+
+4. Load files with git.
 
 ```shell
 git init
@@ -33,11 +39,17 @@ git fetch
 git reset --mixed origin/main
 ```
 
-4. Link(symbolic) `vim` directory to `${HOME}/.vim`.
+5. Link(symbolic) `vim` directory to `${HOME}/.vim`.
 
 ```shell
 rm -rf "${HOME}/.vim"
 ln -s "${HOME}/.config/vim" "${HOME}/.vim"
+```
+
+6. Download alacritty theme.
+
+```shell
+./alacritty/init.sh
 ```
 
 > [!IMPORTANT]
