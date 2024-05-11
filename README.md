@@ -52,6 +52,11 @@ ln -s "${HOME}/.config/vim" "${HOME}/.vim"
 ./alacritty/init.sh
 ```
 
+7. Download tmux theme.
+```shell
+./tmux/init.sh
+```
+
 > [!IMPORTANT]
 > To use SSH:  
 > `git remote set-url origin "git@github.com:Galacsh/config.git"`

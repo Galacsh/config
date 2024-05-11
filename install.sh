@@ -30,3 +30,6 @@ ln -s "${config_dir}/vim" "${vim_dir}"
 # 6. Download alacritty theme.
 ./alacritty/init.sh
 
+# 7. Download tmux theme.
+./tmux/init.sh
+
