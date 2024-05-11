@@ -76,12 +76,16 @@ return {
               ['<S-Tab>'] = 'toggle_selection',
               ['<C-a>'] = 'toggle_all',
               ['<C-q>'] = 'send_selected_to_qflist',
+              ['<C-\\>'] = 'select_vertical',
+              ['<C-=>'] = 'select_horizontal',
             },
             i = {
               ['<Tab>'] = 'toggle_selection',
               ['<S-Tab>'] = 'toggle_selection',
               ['<C-a>'] = 'toggle_all',
               ['<C-q>'] = 'send_selected_to_qflist',
+              ['<C-\\>'] = 'select_vertical',
+              ['<C-=>'] = 'select_horizontal',
             },
           },
           extensions = {

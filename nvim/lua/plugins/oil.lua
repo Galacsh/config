@@ -17,6 +17,8 @@ return {
 
       local keymaps_in_oil_buffer = {
         ["q"] = "actions.close",
+        ["<C-\\>"] = "actions.select_vsplit",
+        ["<C-=>"] = "actions.select_split",
       }
 
       return {

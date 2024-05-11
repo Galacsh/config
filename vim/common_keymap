@@ -29,8 +29,8 @@ vnoremap <silent> < <gv
 vnoremap <silent> > >gv
 
 " Split windows
-nnoremap <silent> <leader>\ :<C-u>vsplit<CR>
-nnoremap <silent> <leader>- :<C-u>split<CR>
+nnoremap <silent> <C-\> :<C-u>vsplit<CR>
+nnoremap <silent> <C-=> :<C-u>split<CR>
 
 " Copy & paste
 vmap <silent> gy "+y
