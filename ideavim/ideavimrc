@@ -1,5 +1,5 @@
-source ~/.vim/common_options
-source ~/.vim/common_keymap
+source ~/.vim/common_options.vimrc
+source ~/.vim/common_keymap.vimrc
 
 " =================================
 " == IdeaVim only configurations ==
