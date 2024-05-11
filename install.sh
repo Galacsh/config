@@ -27,3 +27,6 @@ git restore .
 rm -rf "${vim_dir}"
 ln -s "${config_dir}/vim" "${vim_dir}"
 
+# 6. Download alacritty theme.
+./alacritty/init.sh
+
