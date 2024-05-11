@@ -42,7 +42,5 @@ function! s:ToggleTerminal() abort
 endfunction
 
 nnoremap <silent> <Leader>` :call <SID>ToggleTerminal()<CR>
-tnoremap <silent> <Leader>` <C-w>N:call <SID>ToggleTerminal()<CR>
 tnoremap <silent> <Esc><Esc> <C-\><C-n>
-tnoremap <silent> jk <C-\><C-n>
 
