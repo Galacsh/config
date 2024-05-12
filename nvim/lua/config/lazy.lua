@@ -38,7 +38,7 @@ local opts = {
 				"tohtml",
 				"tutor",
 				"zipplugin",
-        "netrwPlugin"
+	      "netrwPlugin"
 			},
 		},
 	},

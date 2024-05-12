@@ -1,11 +1,35 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    enabled = false,
     build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile", "VeryLazy" },
+    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+    keys = {
+      { "<C-Space>", desc = "Increment Selection" },
+      { "<BS>", desc = "Decrement Selection", mode = "x" },
+    },
+    init = function(plugin)
+      -- add nvim-treesitter queries to the rtp and it's custom query predicates early
+      require("lazy.core.loader").add_to_rtp(plugin)
+      require("nvim-treesitter.query_predicates")
+    end,
     opts = {
       sync_install = false,
-      highlight = { enable = true },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
       indent = { enable = true },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<C-Space>",
+          node_incremental = "<C-Space>",
+          scope_incremental = false,
+          node_decremental = "<BS>",
+        },
+      },
       ensure_installed = {
         "bash",
         "c",
@@ -22,6 +46,7 @@ return {
         "gosum",
         "gowork",
         "html",
+        "javascript",
         "jsdoc",
         "json",
         "jsonc",
@@ -31,6 +56,8 @@ return {
         "markdown_inline",
         "passwd",
         "python",
+        "query",
+        "regex",
         "rust",
         "scss",
         "ssh_config",
