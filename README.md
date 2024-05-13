@@ -39,7 +39,7 @@ git fetch
 git reset --mixed origin/main
 ```
 
-5. Link(symbolic) `vim` directory to `${HOME}/.vim`.
+5. Create link(symbolic) of `vim` directory at `${HOME}/.vim`.
 
 ```shell
 rm -rf "${HOME}/.vim"
@@ -53,8 +53,16 @@ ln -s "${HOME}/.config/vim" "${HOME}/.vim"
 ```
 
 7. Download tmux theme.
+
 ```shell
 ./tmux/init.sh
+```
+
+8. Create link(symbolic) of `aliases.sh` file at `${HOME}/.aliases`.
+
+```shell
+rm "${aliases_file}"
+ln -s "${config_dir}/aliases.sh" "${aliases_file}"
 ```
 
 > [!IMPORTANT]

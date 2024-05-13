@@ -4,6 +4,7 @@ config_dir=${HOME}/.config
 repository="https://github.com/Galacsh/config.git"
 branch="main"
 vim_dir=${HOME}/.vim
+aliases_file=${HOME}/.aliases
 
 # 1. Create "$HOME/.config" if doesn't exist:
 if [[ ! -d "${config_dir}" ]]; then
@@ -23,7 +24,7 @@ git fetch
 git reset "origin/${branch}"
 git restore .
 
-# 5. Link(symbolic) `vim` directory to `${HOME}/.vim`.
+# 5. Create link(symbolic) of `vim` directory at `${HOME}/.vim`.
 rm -rf "${vim_dir}"
 ln -s "${config_dir}/vim" "${vim_dir}"
 
@@ -32,4 +33,8 @@ ln -s "${config_dir}/vim" "${vim_dir}"
 
 # 7. Download tmux theme.
 ./tmux/init.sh
+
+# 8. Create link(symbolic) of `aliases.sh` file at `${HOME}/.aliases`.
+rm "${aliases_file}"
+ln -s "${config_dir}/aliases.sh" "${aliases_file}"
 
