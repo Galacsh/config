@@ -12,7 +12,7 @@ return {
       dim_inactive = {
         enabled = true,
         shade = "dark",
-        percentage = 0.9,
+        percentage = 0.1,
       },
       -- see: https://github.com/catppuccin/nvim?tab=readme-ov-file#integrations
       integrations = {
