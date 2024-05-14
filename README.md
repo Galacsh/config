@@ -34,9 +34,10 @@ rm -rf .git .gitignore README.md alacritty ideavim install.sh nvim vim
 
 ```shell
 git init
-git remote add origin https://github.com/Galacsh/config.git
+git remote add origin "${repository}"
 git fetch
-git reset --mixed origin/main
+git reset "origin/${branch}"
+git restore .
 ```
 
 5. Create link(symbolic) of `vim` directory at `${HOME}/.vim`.
