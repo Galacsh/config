@@ -26,12 +26,12 @@ let g:highlightedyank_highlight_color='rgba(255, 255, 255, 50)'
 " =========================
 
 " [Explorer]
-noremap <leader>e :NERDTreeFind<CR>
+noremap <Leader>e :NERDTreeFind<CR>
 
 " [Closing is too hard]
-map <leader>qq <Action>(CloseContent)
-map <leader>qa <Action>(CloseAllEditors)
-nmap <leader>qw <Action>(HideAllWindows)
+map <Leader>q <Action>(CloseContent)
+map <Leader>Q <Action>(CloseAllEditors)
+nmap <Leader>w <Action>(HideAllWindows)
 
 " [Find / Replace text] using IntelliJ actions
 map n <Action>(FindNext)
@@ -40,31 +40,31 @@ map / <Action>(Find)
 map % <Action>(Replace)
 
 " [Find]
-nmap <leader><leader> <Action>(Switcher)
-nmap <leader>fs <Action>(FindInPath)
-nmap <leader>ff <Action>(GotoFile)
-nmap <leader>fb <Action>(GotoAction)
-nmap <leader>fu <Action>(ShowUsages)
-nmap <leader>fU <Action>(FindUsages)
+nmap <Leader><Leader> <Action>(Switcher)
+nmap <Leader>fs <Action>(FindInPath)
+nmap <Leader>ff <Action>(GotoFile)
+nmap <Leader>fb <Action>(GotoAction)
+nmap <Leader>fu <Action>(ShowUsages)
+nmap <Leader>fU <Action>(FindUsages)
 
 " [Menu]
-nmap <leader>mm <Action>(MainMenu)
-nmap <leader>mb <Action>(BuildMenu)
-nmap <leader>mc <Action>(CodeMenu)
-nmap <leader>mt <Action>(ToolWindowsGroup)
+nmap <Leader>mm <Action>(MainMenu)
+nmap <Leader>mb <Action>(BuildMenu)
+nmap <Leader>mc <Action>(CodeMenu)
+nmap <Leader>mt <Action>(ToolWindowsGroup)
 
 " [Collapse / Expand]
-nmap <leader>, <Action>(CollapseRegion)
-nmap <leader>. <Action>(ExpandRegion)
-nmap <leader>< <Action>(CollapseAllRegions)
-nmap <leader>> <Action>(ExpandAllRegions)
+nmap <Leader>, <Action>(CollapseRegion)
+nmap <Leader>. <Action>(ExpandRegion)
+nmap <Leader>< <Action>(CollapseAllRegions)
+nmap <Leader>> <Action>(ExpandAllRegions)
 
 " [Terminal]
-nmap <leader>` <Action>(ActivateTerminalToolWindow)
+nmap <Leader>` <Action>(ActivateTerminalToolWindow)
 
 " [Mark]
 nnoremap <silent> m0 :delmarks 0-9a-zA-Z<CR>
-nnoremap <silent> <leader>0 :marks 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<CR>
+nnoremap <silent> <Leader>0 :marks 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<CR>
 nmap m1 <Action>(ToggleBookmark1)
 nmap m2 <Action>(ToggleBookmark2)
 nmap m3 <Action>(ToggleBookmark3)
@@ -74,50 +74,57 @@ nmap m6 <Action>(ToggleBookmark6)
 nmap m7 <Action>(ToggleBookmark7)
 nmap m8 <Action>(ToggleBookmark8)
 nmap m9 <Action>(ToggleBookmark9)
-nmap <leader>1 <Action>(GotoBookmark1)
-nmap <leader>2 <Action>(GotoBookmark2)
-nmap <leader>3 <Action>(GotoBookmark3)
-nmap <leader>4 <Action>(GotoBookmark4)
-nmap <leader>5 <Action>(GotoBookmark5)
-nmap <leader>6 <Action>(GotoBookmark6)
-nmap <leader>7 <Action>(GotoBookmark7)
-nmap <leader>8 <Action>(GotoBookmark8)
-nmap <leader>9 <Action>(GotoBookmark9)
+nmap <Leader>1 <Action>(GotoBookmark1)
+nmap <Leader>2 <Action>(GotoBookmark2)
+nmap <Leader>3 <Action>(GotoBookmark3)
+nmap <Leader>4 <Action>(GotoBookmark4)
+nmap <Leader>5 <Action>(GotoBookmark5)
+nmap <Leader>6 <Action>(GotoBookmark6)
+nmap <Leader>7 <Action>(GotoBookmark7)
+nmap <Leader>8 <Action>(GotoBookmark8)
+nmap <Leader>9 <Action>(GotoBookmark9)
 
 " [Code]
-nmap <leader>ca <Action>(ShowIntentionActions)
-nmap <leader>cg <Action>(Generate)
-nmap <leader>ct <Action>(GoToTest)
+nmap <Leader>ca <Action>(ShowIntentionActions)
+nmap <Leader>cg <Action>(Generate)
+nmap <Leader>ct <Action>(GoToTest)
+nmap gd <Action>(GotoDeclaration)
+nmap gr <Action>(GotoDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gt <Action>(QuickTypeDefinition)
+nmap g<S-d> <Action>(GotoTypeDeclaration)
+nmap <S-k> <Action>(QuickJavaDoc)
 
 " [Problems / Quickfix]
-nmap <leader>xd <Action>(ShowErrorDescription)
-nmap <leader>xn <Action>(GotoNextError)
-nmap <leader>xp <Action>(GotoPreviousError)
-nmap <leader>xx <Action>(ActivateProblemsViewToolWindow)
+nmap <Leader>xd <Action>(ShowErrorDescription)
+nmap <Leader>xn <Action>(GotoNextError)
+nmap <Leader>xp <Action>(GotoPreviousError)
+nmap <Leader>xx <Action>(ActivateProblemsViewToolWindow)
 
 " [process] - build/debug/run/test
-nmap <leader>pr <Action>(ChooseRunConfiguration)
-nmap <leader>pd <Action>(ChooseDebugConfiguration)
-nmap <leader>pp <Action>(RunnerActions)
-nmap <leader>ps <Action>(Stop)
+nmap <Leader>pr <Action>(ChooseRunConfiguration)
+nmap <Leader>pd <Action>(ChooseDebugConfiguration)
+nmap <Leader>pp <Action>(RunnerActions)
+nmap <Leader>ps <Action>(Stop)
 
 " [refactor]
-map <leader>rr <Action>(Refactorings.QuickListPopupAction)
-map <leader>rn <Action>(RenameElement)
-map <leader>rf <Action>(ReformatCode)
-map <leader>ro <Action>(OptimizeImports)
-map <leader>rs <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
-map <leader>rN <Action>(RenameFile)
+map <Leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <Leader>rn <Action>(RenameElement)
+map <Leader>rf <Action>(ReformatCode)
+map <Leader>ro <Action>(OptimizeImports)
+map <Leader>rs <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
+map <Leader>rN <Action>(RenameFile)
 
 " [Git]
 " Enable 'Staging Area'
-map <leader>gg <Action>(Vcs.QuickListPopupAction)
-map <leader>gd <Action>(Compare.SameVersion)
-map <leader>gr <Action>(Vcs.RollbackChangedLines)
-map <leader>gc <Action>(Git.Commit.Stage)
-map <leader>gps <Action>(Vcs.Push)
-map <leader>gpl <Action>(Git.Pull)
-map <leader>gf <Action>(Git.Fetch)
-map <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
-map <leader>gH <Action>(Vcs.Show.Log)
-map <leader>ga <Action>(Git.Add)
+map <Leader>gg <Action>(Vcs.QuickListPopupAction)
+map <Leader>gd <Action>(Compare.SameVersion)
+map <Leader>gr <Action>(Vcs.RollbackChangedLines)
+map <Leader>gc <Action>(Git.Commit.Stage)
+map <Leader>gps <Action>(Vcs.Push)
+map <Leader>gpl <Action>(Git.Pull)
+map <Leader>gf <Action>(Git.Fetch)
+map <Leader>gh <Action>(Vcs.ShowTabbedFileHistory)
+map <Leader>gH <Action>(Vcs.Show.Log)
+map <Leader>ga <Action>(Git.Add)
+
