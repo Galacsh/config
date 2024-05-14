@@ -3,8 +3,8 @@
 " ======================= "
 
 " [Closing is too hard]
-noremap <silent> <leader>qq :<C-u>update<Bar>quit<CR>
-noremap <silent> <leader>qa :<C-u>wall<Bar>qall<CR>
+noremap <silent> <leader>q :<C-u>update<Bar>quit<CR>
+noremap <silent> <leader><S-q> :<C-u>wall<Bar>qall<CR>
 
 " [Find / Replace]
 function! GetVisualSelection()
