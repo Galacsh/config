@@ -41,6 +41,9 @@ return {
         vimls = {},
         yamlls = {},
       },
+      others = {
+        "stylua",
+      },
       global_capabilities = {},
     },
     config = function(_, opts)
@@ -131,27 +134,38 @@ return {
 
       -- =============================================
 
-      require("mason").setup()
-      require('mason-lspconfig').setup({
-        ensure_installed = vim.tbl_keys(opts.servers),
+      local mason = require("mason")
+      local registry = require("mason-registry")
+      local lspconfig = require("lspconfig")
+      local mason_lspconfig = require("mason-lspconfig")
+
+      -- Setup 'Mason' first
+      mason.setup()
+
+      -- Ensure all packages are installed
+      local ensure_installed = Helper.concat(vim.tbl_keys(opts.servers), opts.others)
+      local ls_name = mason_lspconfig.get_mappings().lspconfig_to_mason
+      for _, pkg_name in ipairs(ensure_installed) do
+        local pkg = registry.get_package(ls_name[pkg_name] or pkg_name)
+        if not pkg:is_installed() then
+          pkg:install()
+          vim.notify("Installed '" .. pkg_name .. "'.")
+        end
+      end
+
+      -- Setup each language server
+      mason_lspconfig.setup({
         handlers = {
           function(server_name)
             local server = opts.servers[server_name] or {}
 
-            if next(server) ~= nil then
-              -- Merge capabilities
-              server.capabilities = vim.tbl_deep_extend('force', {}, base_capabilities, opts.global_capabilities or {}, server.capabilities or {})
-              require('lspconfig')[server_name].setup(server)
-            end
+            -- Merge capabilities
+            server.capabilities = vim.tbl_deep_extend('force', {}, base_capabilities, opts.global_capabilities or {}, server.capabilities or {})
+            lspconfig[server_name].setup(server)
           end,
         }
       })
     end,
   }
 }
-
-
-
-
-
 
