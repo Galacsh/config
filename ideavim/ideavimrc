@@ -31,7 +31,7 @@ noremap <Leader>e :NERDTreeFind<CR>
 " [Closing is too hard]
 map <Leader>q <Action>(CloseContent)
 map <Leader>Q <Action>(CloseAllEditors)
-nmap <Leader>w <Action>(HideAllWindows)
+map <C-h> <Action>(HideAllWindows)
 
 " [Find / Replace text] using IntelliJ actions
 map n <Action>(FindNext)
@@ -60,7 +60,7 @@ nmap <Leader>< <Action>(CollapseAllRegions)
 nmap <Leader>> <Action>(ExpandAllRegions)
 
 " [Terminal]
-nmap <Leader>` <Action>(ActivateTerminalToolWindow)
+" Use Option(Alt) + F12 to toggle terminal window.
 
 " [Mark]
 nnoremap <silent> m0 :delmarks 0-9a-zA-Z<CR>
