@@ -10,11 +10,8 @@ local hints = {
     ["n"] = { nil, "Rename" },
     ["f"] = { nil, "Reformat" },
   },
-  ["<Leader>q"] = {
-    name = "+ Close",
-    ["q"] = { nil, "Close buffer" },
-    ["a"] = { nil, "Close all" },
-  },
+  ["<Leader>q"] = { nil, "Close buffer" },
+  ["<Leader>Q"] = { nil, "Exit" },
   ["<Leader>\\"] = { nil, "Split vertically" },
   ["<Leader>-"] = { nil, "Split horizontally" },
   ["m0"] = { nil, "Clear marks" },
@@ -29,7 +26,7 @@ local hints = {
   ["gy"] = { nil, "Copy to clipboard" },
   ["gp"] = { nil, "Paste from clipboard" },
   ["<C-a>"] = { nil, "Select all" },
-  ["<Leader>`"] = { nil, "Toggle terminal" },
+  ["<M-F12>"] = { nil, "Toggle terminal" },
 }
 
 return {
