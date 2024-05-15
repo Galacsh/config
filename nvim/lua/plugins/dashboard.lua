@@ -17,7 +17,7 @@ return {
         { icon = icons.lazy,           desc = " Lazy",           key = "l", action = "Lazy", },
         { icon = icons.quit,           desc = " Quit",           key = "q", action = "qa", },
       }
-      
+
       -- calculate padding size to center the "center"
       local function calculate_padding(menu_count)
           local lines = vim.o.lines  -- Get the total lines in the terminal
