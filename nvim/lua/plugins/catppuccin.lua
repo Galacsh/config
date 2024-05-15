@@ -21,10 +21,6 @@ return {
 				harpoon = false,
 				markdown = true,
 				mason = false,
-				mini = {
-					enabled = true,
-					indentscope_color = "",
-				},
 				native_lsp = {
 					enabled = true,
 					virtual_text = {
