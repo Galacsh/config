@@ -24,7 +24,7 @@ set softtabstop=2
 " User Interface
 set completeopt=menu,menuone,noinsert
 set pumheight=10
-set showmatch
+set noshowmatch
 set ruler
 set mouse=a
 
