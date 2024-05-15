@@ -4,7 +4,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
     keys = {
-      { "<leader>e", "<Cmd>Oil --float<CR>", silent = true, noremap = true, desc = "Explorer" }
+      { "<Leader>e", "<Cmd>Oil --float<CR>", silent = true, noremap = true, desc = "Explorer" }
     },
     opts = function()
       local function is_hidden_file(name, _)
