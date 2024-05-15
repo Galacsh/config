@@ -60,7 +60,7 @@ nmap <Leader>< <Action>(CollapseAllRegions)
 nmap <Leader>> <Action>(ExpandAllRegions)
 
 " [Terminal]
-" Use Option(Alt) + F12 to toggle terminal window.
+" Use 'Ctrl + e' to toggle terminal emulator.
 
 " [Mark]
 nnoremap <silent> m0 :delmarks 0-9a-zA-Z<CR>

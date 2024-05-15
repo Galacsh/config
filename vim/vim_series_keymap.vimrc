@@ -26,21 +26,41 @@ vnoremap g/ :<C-u>call GetVisualSelection()<Bar>:set hlsearch<CR>:%s//
 nnoremap <silent> <Esc> :<C-u>nohlsearch<CR>
 
 " [Terminal]
-let s:term_buf_nr = -1
-function! s:ToggleTerminal() abort
-    if s:term_buf_nr == -1 || !bufexists(s:term_buf_nr)
-        execute "botright terminal"
-        setlocal nobuflisted
-        let s:term_buf_nr = bufnr("%")
+
+" Toggle terminal
+let g:term_buf_nr = -1
+function! ToggleTerminal() abort
+  " Determine the command to open a terminal based on the editor (Vim or Neovim)
+  if has('nvim')
+    let l:open_terminal = 'botright 15 split +terminal | startinsert!'
+  else
+    let l:open_terminal = 'botright terminal ++rows=15'
+  endif
+
+  " Get terminal buffer number and window number
+  let terminal_info = gettabvar(tabpagenr(), 'term', {'bufnr': -1, 'winnr': -1})
+
+  " If the terminal buffer does not exist, open a new terminal
+  if terminal_info.bufnr == -1 || !bufexists(terminal_info.bufnr)
+    execute l:open_terminal
+    call settabvar(tabpagenr(), 'term', {'bufnr': bufnr('%'), 'winnr': winnr()})
+  else
+    " If the terminal buffer exists, check if it is visible in the current tab
+    let win_id = bufwinnr(terminal_info.bufnr)
+    if win_id == -1
+      " If the terminal buffer is not visible, open it in a new split
+      execute 'botright 15 split +b' . terminal_info.bufnr . ' | startinsert!'
     else
-        if bufwinnr(s:term_buf_nr) == -1
-            execute "botright sbuffer " . s:term_buf_nr
-        else
-            hide
-        endif
+      " If the terminal buffer is visible, close the terminal window
+      execute win_id . 'hide'
     endif
+  endif
 endfunction
 
-nnoremap <silent> <Leader>` :call <SID>ToggleTerminal()<CR>
-tnoremap <silent> <Esc><Esc> <C-\><C-n>
+" Normal mode mappings to toggle the terminal emulator
+nnoremap <silent> <C-e> <Cmd>call ToggleTerminal()<CR>
+" Terminal mode mapping to close the terminal emulator
+tnoremap <silent> <C-e> <Cmd>call ToggleTerminal()<CR>
+" Change mode
+tnoremap <silent> <C-v> <C-\><C-n>
 
