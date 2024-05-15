@@ -31,7 +31,7 @@ noremap <Leader>e :NERDTreeFind<CR>
 " [Closing is too hard]
 map <Leader>q <Action>(CloseContent)
 map <Leader>Q <Action>(CloseAllEditors)
-map <C-h> <Action>(HideAllWindows)
+map <Leader>w <Action>(HideAllWindows)
 
 " [Find / Replace text] using IntelliJ actions
 map n <Action>(FindNext)
