@@ -1,11 +1,5 @@
-source ~/.vim/common_options.vimrc
-source ~/.vim/common_keymap.vimrc
-
-" =================================
-" == IdeaVim only configurations ==
-" =================================
-
-set notimeout
+source ~/.vim/options.vimrc
+source ~/.vim/keymap.vimrc
 
 " =============
 " == Plugins ==
@@ -21,23 +15,9 @@ set highlightedyank
 let g:highlightedyank_highlight_duration='100'
 let g:highlightedyank_highlight_color='rgba(255, 255, 255, 50)'
 
-" =========================
-" == IdeaVim only Keymap ==
-" =========================
-
-" [Explorer]
-noremap <Leader>e :NERDTreeFind<CR>
-
-" [Closing is too hard]
-map <Leader>q <Action>(CloseContent)
-map <Leader>Q <Action>(CloseAllEditors)
-map <Leader>w <Action>(HideAllWindows)
-
-" [Find / Replace text] using IntelliJ actions
-map n <Action>(FindNext)
-map N <Action>(FindPrevious)
-map / <Action>(Find)
-map % <Action>(Replace)
+" ============
+" == Keymap ==
+" ============
 
 " [Find]
 nmap <Leader><Leader> <Action>(Switcher)
@@ -58,31 +38,6 @@ nmap <Leader>, <Action>(CollapseRegion)
 nmap <Leader>. <Action>(ExpandRegion)
 nmap <Leader>< <Action>(CollapseAllRegions)
 nmap <Leader>> <Action>(ExpandAllRegions)
-
-" [Terminal]
-" Use 'Ctrl + e' to toggle terminal emulator.
-
-" [Mark]
-nnoremap <silent> m0 :delmarks 0-9a-zA-Z<CR>
-nnoremap <silent> <Leader>0 :marks 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<CR>
-nmap m1 <Action>(ToggleBookmark1)
-nmap m2 <Action>(ToggleBookmark2)
-nmap m3 <Action>(ToggleBookmark3)
-nmap m4 <Action>(ToggleBookmark4)
-nmap m5 <Action>(ToggleBookmark5)
-nmap m6 <Action>(ToggleBookmark6)
-nmap m7 <Action>(ToggleBookmark7)
-nmap m8 <Action>(ToggleBookmark8)
-nmap m9 <Action>(ToggleBookmark9)
-nmap <Leader>1 <Action>(GotoBookmark1)
-nmap <Leader>2 <Action>(GotoBookmark2)
-nmap <Leader>3 <Action>(GotoBookmark3)
-nmap <Leader>4 <Action>(GotoBookmark4)
-nmap <Leader>5 <Action>(GotoBookmark5)
-nmap <Leader>6 <Action>(GotoBookmark6)
-nmap <Leader>7 <Action>(GotoBookmark7)
-nmap <Leader>8 <Action>(GotoBookmark8)
-nmap <Leader>9 <Action>(GotoBookmark9)
 
 " [Code]
 nmap <Leader>ca <Action>(ShowIntentionActions)

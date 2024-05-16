@@ -1,6 +1,3 @@
-source ~/.vim/common_options.vimrc
-source ~/.vim/common_keymap.vimrc
-source ~/.vim/vim_series_options.vimrc
-source ~/.vim/vim_series_keymap.vimrc
-source ~/.vim/vim_only_options.vimrc
-source ~/.vim/vim_only_keymap.vimrc
+source ~/.vim/options.vimrc
+source ~/.vim/keymap.vimrc
+
