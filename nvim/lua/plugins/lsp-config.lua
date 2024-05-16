@@ -20,6 +20,7 @@ return {
 				cssls = {},
 				docker_compose_language_service = {},
 				dockerls = {},
+				eslint = {},
 				gopls = {},
 				html = {},
 				jsonls = {},
@@ -43,7 +44,10 @@ return {
 				yamlls = {},
 			},
 			others = {
+				"shfmt",
 				"stylua",
+				"prettier",
+				"prettierd",
 			},
 			global_capabilities = {},
 		},
