@@ -9,7 +9,7 @@ return {
       -- stylua: ignore
       local menu = {
         { icon = icons.explorer,       desc = " Explorer",       key = "e", action = "Oil --float", },
-        { icon = icons.find_file,      desc = " Find file",      key = "f", action = "Telescope find_files hidden=true", },
+        { icon = icons.find_file,      desc = " Find file",      key = "f", action = "Telescope git_files show_untracked=true", },
         { icon = icons.new_file,       desc = " New file",       key = "n", action = "ene | startinsert", },
         { icon = icons.harpoon,        desc = " Harpoon",        key = "h", action = "lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())", },
         { icon = icons.recent_files,   desc = " Recent files",   key = "r", action = "Telescope oldfiles", },

@@ -28,6 +28,12 @@ return {
 				telescope.find_files({ hidden = true, no_ignore = true, no_ignore_parent = true })
 			end
 
+			-- Find git files.
+			-- * Show untracked files.
+			local function git_files()
+				telescope.git_files({ show_untracked = true })
+			end
+
 			-- Find open buffers.
 			local function find_buffers()
 				telescope.buffers({ sort_mru = true, sort_lastused = true })
@@ -53,7 +59,7 @@ return {
 				{ "<Leader>fb", telescope.builtin, desc = "[b]uiltins" },
 				{ "<Leader>fc", telescope.command_history, desc = "[c]ommand history" },
 				{ "<Leader>fd", find_diagnostics, desc = "[d]iagnostic" },
-				{ "<Leader>ff", telescope.git_files, desc = "Git files" },
+				{ "<Leader>ff", git_files, desc = "Git files" },
 				{ "<Leader>fF", telescope.find_files, desc = "[F]iles (without hidden)" },
 				{ "<Leader>fh", telescope.help_tags, desc = "[h]elp" },
 				{ "<Leader>fk", telescope.keymaps, desc = "[k]eymaps" },
