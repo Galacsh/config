@@ -1,10 +1,10 @@
 return {
-  {
-    "nvimdev/dashboard-nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    event = "VimEnter",
-    opts = function()
-      local icons = Helper.icons.dashboard
+	{
+		"nvimdev/dashboard-nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		event = "VimEnter",
+		opts = function()
+			local icons = Helper.icons.dashboard
 
       -- stylua: ignore
       local menu = {
@@ -18,41 +18,40 @@ return {
         { icon = icons.quit,           desc = " Quit",           key = "q", action = "qa", },
       }
 
-      -- calculate padding size to center the "center"
-      local function calculate_padding(menu_count)
-          local lines = vim.o.lines  -- Get the total lines in the terminal
-          local center_size = 2 * menu_count - 1
-          return math.floor((lines - center_size) / 2) -- Calculate padding
-      end
+			-- calculate padding size to center the "center"
+			local function calculate_padding(menu_count)
+				local lines = vim.o.lines -- Get the total lines in the terminal
+				local center_size = 2 * menu_count - 1
+				return math.floor((lines - center_size) / 2) -- Calculate padding
+			end
 
-      local opts = {
-        theme = "doom",
-        hide = { statusline = false },
-        config = {
-          header = vim.split(string.rep("@", calculate_padding(#menu)), "@"),
-          footer = {},
-          center = menu,
-        },
-      }
+			local opts = {
+				theme = "doom",
+				hide = { statusline = false },
+				config = {
+					header = vim.split(string.rep("@", calculate_padding(#menu)), "@"),
+					footer = {},
+					center = menu,
+				},
+			}
 
-      for _, button in ipairs(opts.config.center) do
-        button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
-        button.key_format = "  %s"
-      end
+			for _, button in ipairs(opts.config.center) do
+				button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
+				button.key_format = "  %s"
+			end
 
-      -- close Lazy and re-open when the dashboard is ready
-      if vim.o.filetype == "lazy" then
-        vim.cmd.close()
-        vim.api.nvim_create_autocmd("User", {
-          pattern = "DashboardLoaded",
-          callback = function()
-            require("lazy").show()
-          end,
-        })
-      end
+			-- close Lazy and re-open when the dashboard is ready
+			if vim.o.filetype == "lazy" then
+				vim.cmd.close()
+				vim.api.nvim_create_autocmd("User", {
+					pattern = "DashboardLoaded",
+					callback = function()
+						require("lazy").show()
+					end,
+				})
+			end
 
-      return opts
-    end,
-  }
+			return opts
+		end,
+	},
 }
-
