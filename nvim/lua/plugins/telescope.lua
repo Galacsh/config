@@ -22,7 +22,7 @@ return {
 			-- ===============================
 
 			-- Find all files.
-			-- * Show hidden file.
+			-- * Show hidden files.
 			-- * Show ignored files.
 			local function find_all_files()
 				telescope.find_files({ hidden = true, no_ignore = true, no_ignore_parent = true })
