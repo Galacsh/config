@@ -17,7 +17,13 @@ return {
 			servers = {
 				bashls = {},
 				cmake = {},
-				cssls = {},
+				cssls = {
+					settings = {
+						css = {
+							lint = { unknownAtRules = "ignore" },
+						},
+					},
+				},
 				docker_compose_language_service = {},
 				dockerls = {},
 				eslint = {},
