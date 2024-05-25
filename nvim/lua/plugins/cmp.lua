@@ -2,6 +2,10 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		event = { "InsertEnter", "CmdlineEnter" },
+		enabled = function()
+			local buf = vim.api.nvim_win_get_buf(0)
+			return vim.bo[buf].modifiable
+		end,
 		dependencies = {
 			{
 				"L3MON4D3/LuaSnip",
