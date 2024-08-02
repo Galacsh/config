@@ -1,47 +1,45 @@
 local hints = {
-  ["<Leader>e"] = { nil, "Explorer" },
-  ["<Leader>f"] = { nil, "+ Find" },
-  ["<Leader>g"] = { nil, "+ Git" },
-  ["<Leader>h"] = { nil, "+ Harpoon" },
-  ["<Leader>n"] = { nil, "+ Notification" },
-  ["<Leader>x"] = { nil, "+ Problems" },
-  ["<Leader>r"] = {
-    name = "+ Refactor",
-    ["n"] = { nil, "Rename" },
-    ["f"] = { nil, "Reformat" },
-  },
-  ["<Leader>q"] = { nil, "Close buffer" },
-  ["<Leader>Q"] = { nil, "Exit" },
-  ["<Leader>\\"] = { nil, "Split vertically" },
-  ["<Leader>-"] = { nil, "Split horizontally" },
-  ["m0"] = { nil, "Clear marks" },
-  ["<C-h>"] = { nil, "Jump to the left window" },
-  ["<C-j>"] = { nil, "Jump to the below window" },
-  ["<C-k>"] = { nil, "Jump to the above window" },
-  ["<C-l>"] = { nil, "Jump to the right window" },
-  ["]["] = { nil, "Previous buffer" },
-  ["[]"] = { nil, "Next buffer" },
-  ["<S-l>"] = { nil, "Jump to the end of the line" },
-  ["<S-h>"] = { nil, "Jump to the start of the line" },
-  ["gy"] = { nil, "Copy to clipboard" },
-  ["gp"] = { nil, "Paste from clipboard" },
-  ["<C-a>"] = { nil, "Select all" },
-  ["<M-F12>"] = { nil, "Toggle terminal" },
+	{ "<Leader>e", desc = "Explorer" },
+	{ "<Leader>f", group = "+ Find" },
+	{ "<Leader>g", group = "+ Git" },
+	{ "<Leader>h", group = "+ Harpoon" },
+	{ "<Leader>n", group = "+ Notification" },
+	{ "<Leader>x", group = "+ Problems" },
+	{ "<Leader>r", group = "+ Refactor" },
+	{ "<Leader>rn", desc = "Rename" },
+	{ "<Leader>rf", desc = "Reformat" },
+	{ "<Leader>q", desc = "Close buffer" },
+	{ "<Leader>Q", desc = "Exit" },
+	{ "<Leader>\\", desc = "Split vertically" },
+	{ "<Leader>-", desc = "Split horizontally" },
+	{ "m0", desc = "Clear marks" },
+	{ "<C-h>", desc = "Jump to the left window" },
+	{ "<C-j>", desc = "Jump to the below window" },
+	{ "<C-k>", desc = "Jump to the above window" },
+	{ "<C-l>", desc = "Jump to the right window" },
+	{ "][", desc = "Previous buffer" },
+	{ "[]", desc = "Next buffer" },
+	{ "<S-l>", desc = "Jump to the end of the line" },
+	{ "<S-h>", desc = "Jump to the start of the line" },
+	{ "gy", desc = "Copy to clipboard" },
+	{ "gp", desc = "Paste from clipboard" },
+	{ "<C-a>", desc = "Select all" },
+	{ "<M-F12>", desc = "Toggle terminal" },
 }
 
 return {
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    opts = {
-      plugins = {
-        spelling = { enabled = false },
-      }
-    },
-    config = function(_, opts)
-      local which_key = require("which-key")
-      which_key.setup(opts)
-      which_key.register(hints)
-    end,
-  }
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {
+			plugins = {
+				spelling = { enabled = false },
+			},
+		},
+		config = function(_, opts)
+			local which_key = require("which-key")
+			which_key.setup(opts)
+			which_key.add(hints)
+		end,
+	},
 }
