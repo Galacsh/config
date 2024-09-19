@@ -6,7 +6,7 @@ return {
 			{
 				"<Leader>rf",
 				function()
-					require("conform").format({ async = true, lsp_fallback = true })
+					require("conform").format({ async = true, lsp_fallback = true, stop_after_first = true })
 				end,
 				mode = "n",
 			},
@@ -22,10 +22,10 @@ return {
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
-				javascript = { { "prettierd", "prettier" } },
-				typescript = { { "prettierd", "prettier" } },
-				javascriptreact = { { "prettierd", "prettier" } },
-				typescriptreact = { { "prettierd", "prettier" } },
+				javascript = { "prettierd", "prettier" },
+				typescript = { "prettierd", "prettier" },
+				javascriptreact = { "prettierd", "prettier" },
+				typescriptreact = { "prettierd", "prettier" },
 				-- go = { "gofmt" },
 			},
 		},

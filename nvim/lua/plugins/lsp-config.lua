@@ -45,7 +45,7 @@ return {
 				rust_analyzer = {},
 				tailwindcss = {},
 				taplo = {},
-				tsserver = {},
+				ts_ls = {},
 				vimls = {},
 				yamlls = {},
 			},
