@@ -1,5 +1,4 @@
 # etc
-alias nv="nvim"
 alias cd="z"
 
 # git
