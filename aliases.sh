@@ -1,5 +1,6 @@
 # etc
 alias cd="z"
+alias v="vim"
 
 # git
 alias ga="git add"
