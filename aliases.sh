@@ -6,6 +6,9 @@ alias ga="git add"
 alias gall="git add -A"
 alias gcm="git commit -m"
 alias gs="git status"
+alias grf="git restore" # Restore File
+alias grfs="git restore --staged" # Restore File (Staged)
+alias grc="git reset" # Reset to the specified Commit
 
 # tmux
 function tmux_start_session() {
