@@ -98,12 +98,10 @@ else " #Vim & #Neovim
     let g:netrw_liststyle=1
   endif
 
-  " [[ Use 'habamax' in tmux #Vim ]]
+  " [[ Use 'catppuccin_mocha' color scheme #Vim ]]
   if !has('nvim')
-    if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
-      let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-      let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-      colorscheme habamax
+    if !has('gui_running')
+      colorscheme catppuccin_mocha
     endif
   endif
 endif
