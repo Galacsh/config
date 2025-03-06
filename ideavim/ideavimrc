@@ -11,6 +11,8 @@ let g:WhichKey_DefaultDelay='1000'
 set NERDTree
 set surround
 set commentary
+set easymotion
+let g:EasyMotion_do_mapping='0'
 set highlightedyank
 let g:highlightedyank_highlight_duration='100'
 let g:highlightedyank_highlight_color='rgba(255, 255, 255, 50)'
@@ -18,6 +20,10 @@ let g:highlightedyank_highlight_color='rgba(255, 255, 255, 50)'
 " ============
 " == Keymap ==
 " ============
+
+" [EasyMotion]
+nmap <Leader>j <Plug>(easymotion-f)
+nmap <Leader>J <Plug>(easymotion-F)
 
 " [Find]
 nmap <Leader><Leader> <Action>(Switcher)
