@@ -55,6 +55,7 @@ nmap gi <Action>(GotoImplementation)
 nmap gt <Action>(QuickTypeDefinition)
 nmap g<S-d> <Action>(GotoTypeDeclaration)
 nmap <S-k> <Action>(QuickJavaDoc)
+nmap gh <Action>(TypeHierarchy)
 
 " [Problems / Quickfix]
 nmap <Leader>xd <Action>(ShowErrorDescription)
